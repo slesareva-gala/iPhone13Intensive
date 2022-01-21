@@ -3,7 +3,6 @@
 // доступ к списку узлов (nodelist) первых детей с тегом a родителей с классом .header-menu__item
 // - ссылки пунктов меню
 const links = document.querySelectorAll('.header-menu__item a, .card-details__link-characteristics')
-console.log(links)
 
 // подключение полифила плавного скролла
 // https://www.npmjs.com/package/seamless-scroll-polyfill
@@ -22,7 +21,7 @@ links.forEach((element) => {
             // устанавливаем плавный переход
             // section.scrollIntoView({   // на Safari не работает
             // ... а это должно работать везде (кроссбраузерный)
-            seamless.elementScrollIntoView(document.querySelector("#characteristics"), {
+            seamless.elementScrollIntoView(section, {
                 behavior: 'smooth',
                 block: 'start'
             })
