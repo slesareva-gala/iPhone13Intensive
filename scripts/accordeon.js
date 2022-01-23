@@ -11,26 +11,23 @@ const accordeon = () => {
             const chButton = item.querySelector('.characteristics__title')
             // содержимое клавиши
             const chContent = item.querySelector('.characteristics__description')
-            // закрытие всех раскрытых содержимых, кроме выбранного
-            if (index !== chIndex) {
-                chButton.classList.remove('active')
-                chContent.classList.remove('open')
-                chContent.style.height = ''
 
-            } else { // для выбранного
-                if (chButton.classList.contains('active')) {
-                    // закрываем раскрытое                
-                    chContent.style.height = ''
-                } else {
-                    // раскрываем содержимое по нажатию                
-                    // для списка  для срабатывания свойства transition из css 
-                    // нужно точно указать высоту высоту раскрытого блока
-                    // chContent.scrollHeight 
-                    // для идентификации "открытого" состояния маркируем классом .open
-                    chContent.style.height = chContent.scrollHeight + 'px'
-                }
-                chButton.classList.toggle('active')
-                chContent.classList.toggle('open')
+            // закрытие всех раскрытых содержимых или открытое выбранное
+            if (index !== chIndex || chButton.classList.contains('active')) {
+                chButton.classList.remove('active')
+                chContent.style.height = ''
+                chContent.classList.remove('open')
+
+
+            } else { // для выбранного закрытого
+                // раскрываем содержимое по нажатию                
+                // для списка  для срабатывания свойства transition из css 
+                // нужно точно указать высоту высоту раскрытого блока
+                // chContent.scrollHeight 
+                // для идентификации "открытого" состояния маркируем классом .open
+                chButton.classList.add('active')
+                chContent.style.height = chContent.scrollHeight + 'px'
+                chContent.classList.add('open')
             }
         })
     }
