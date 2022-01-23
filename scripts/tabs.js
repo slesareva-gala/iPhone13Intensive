@@ -14,21 +14,21 @@ const tabsFunc = () => {  // инкапсулируем...
     const tabsOption = [
         {
             name: "Graphite",
-            namePage: "Графитовый",
+            namePage: "iPhone 13 Pro Графитовый",
             memory: '128',
             price: 60000,
             image: 'img/iPhone-graphite.webp'
         },
         {
             name: "Silver",
-            namePage: "Серебристый",
+            namePage: "iPhone 13 Pro Серебристый",
             memory: '256',
             price: 65000,
             image: 'img/iPhone-silver.webp'
         },
         {
             name: "Sierra Blue",
-            namePage: "Небесно-голубой",
+            namePage: "iPhone 13 Pro Небесно-голубой",
             memory: '512',
             price: 70000,
             image: 'img/iPhone-sierra_blue.webp'
