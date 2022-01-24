@@ -55,8 +55,10 @@ const getData = () => {
     // const data = fetch('https://jsonplaceholder.typicode.com/todos')
     // запрос данных из локального файла (проблемотичен) - м/из облака
     const getGoods = () => {
-        console.log(window.location.pathname)
-        fetch('/cross-sell-dbase/dbase.json')
+        let pathJson = window.location.pathname
+        if (pathJson == '/index.html') pathJson = '/'
+
+        fetch(pathJson + 'cross-sell-dbase/dbase.json')
             .then(response => {
                 if (response.ok) return response.json()
                 else throw new Error('Данные были получены с ошибкой ')
