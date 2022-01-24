@@ -55,6 +55,7 @@ const getData = () => {
     // const data = fetch('https://jsonplaceholder.typicode.com/todos')
     // запрос данных из локального файла (проблемотичен) - м/из облака
     const getGoods = () => {
+        console.log(window.location.pathname)
         fetch('/cross-sell-dbase/dbase.json')
             .then(response => {
                 if (response.ok) return response.json()
